@@ -1,0 +1,300 @@
+.main {
+  width: 100%;
+  max-width: 560px;
+  padding: var(--spacing-lg);
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+
+  h3 {
+    font-size: var(--font-heading-xl-size);
+    line-height: var(--font-heading-xl-line-height);
+  }
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: var(--border-width-regular) solid transparent;
+  border-radius: var(--border-radius-md);
+  font-family: inherit;
+  font-size: var(--font-text-sm-size);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:focus-visible {
+    outline: calc(var(--border-width-regular) * 2) solid var(--color-ring-primary);
+    outline-offset: var(--border-width-regular);
+  }
+}
+
+.btn-accent {
+  color: var(--color-text-on-accent);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-accent) 85%, var(--color-background-inverse));
+  }
+}
+
+.btn-secondary {
+  color: var(--color-text-primary);
+  background-color: var(--color-background-surface);
+  border-color: var(--color-border);
+
+  &:hover {
+    background-color: var(--color-background-hover);
+  }
+}
+
+.btn-danger {
+  color: var(--color-text-on-danger);
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-danger) 85%, var(--color-background-inverse));
+  }
+}
+
+.btn-icon {
+  padding: var(--spacing-xs);
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-text-primary);
+  }
+}
+
+/* --- Todo List --- */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: var(--border-width-regular) solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.empty-state {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.todo-row {
+  background-color: var(--color-background-primary);
+  transition: background-color 0.15s;
+
+  & + .todo-row {
+    border-top: var(--border-width-regular) solid var(--color-border);
+  }
+}
+
+.todo-row-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+
+  &:hover {
+    background-color: var(--color-background-hover);
+  }
+}
+
+.todo-row-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease;
+
+  > * {
+    overflow: hidden;
+  }
+}
+
+.todo-row.editing {
+  background-color: var(--color-background-surface);
+
+  .todo-row-expand {
+    grid-template-rows: 1fr;
+  }
+}
+
+.todo-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: 0 var(--spacing-md) var(--spacing-md);
+
+  label {
+    font-size: var(--font-text-sm-size);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      width: auto;
+      accent-color: var(--color-accent);
+    }
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: var(--border-width-regular) solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+
+    &:focus {
+      outline: calc(var(--border-width-regular) * 2) solid var(--color-ring-primary);
+      outline-offset: calc(var(--border-width-regular) * -1);
+    }
+  }
+}
+
+.todo-info {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.todo-row.completed .todo-title {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.todo-title {
+  font-weight: var(--font-weight-medium);
+}
+
+.todo-meta {
+  font-size: var(--font-text-sm-size);
+  color: var(--color-text-muted);
+}
+
+.todo-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+/* --- Inline Form --- */
+.todo-form {
+  border: var(--border-width-regular) solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  background-color: var(--color-background-surface);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  h4 {
+    font-size: var(--font-heading-lg-size);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  label {
+    font-size: var(--font-text-sm-size);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-text-primary);
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      width: auto;
+      accent-color: var(--color-accent);
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: var(--border-width-regular) solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+
+    &:focus {
+      outline: calc(var(--border-width-regular) * 2) solid var(--color-ring-primary);
+      outline-offset: calc(var(--border-width-regular) * -1);
+    }
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+/* --- Inline Delete Confirm --- */
+.confirm-inline {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.confirm-text {
+  font-size: var(--font-text-sm-size);
+  color: var(--color-text-muted);
+}
+
+.btn-sm {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-text-sm-size);
+}
+
+/* --- Loading --- */
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*", "pkg/**/*"],
+  "exclude": [
+    "src/apps/*/index.html",
+    "src/apps/*/index.tsx",
+    "src/apps/*/components/**",
+    "src/apps/*/lib/**",
+    "src/apps/*/styles/**"
+  ]
+}

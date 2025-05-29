@@ -1,0 +1,36 @@
+{
+  "name": "mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server demo showcasing best practices and full MCP functionality",
+  "type": "module",
+  "main": "dist/pkg/index.js",
+  "scripts": {
+    "build": "npm run build:apps && tsc",
+    "build:apps": "cross-env INPUT=src/apps/todo/index.html vite build",
+    "start": "node dist/pkg/index.js",
+    "start:stdio": "node dist/pkg/index.js stdio",
+    "dev": "npm run build && node dist/pkg/index.js",
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.1",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "solid-js": "^1.9.12",
+    "vite-plugin-solid": "^2.11.12",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.15",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.7.0",
+    "cross-env": "^10.1.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.12",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}
