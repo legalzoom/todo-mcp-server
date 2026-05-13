@@ -1,9 +1,20 @@
 {
-  "name": "mcp-server",
-  "version": "1.0.0",
+  "name": "@gitops-ci-cd/acme-mcp-server",
+  "version": "0.9.0",
+  "mcpName": "io.github.gitops-ci-cd/acme-mcp-server",
   "description": "MCP server demo showcasing best practices and full MCP functionality",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitops-ci-cd/acme-mcp-server.git"
+  },
   "type": "module",
   "main": "dist/pkg/index.js",
+  "bin": {
+    "acme-mcp-server": "dist/pkg/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "npm run build:apps && tsc",
     "build:apps": "cross-env INPUT=src/apps/todo/index.html vite build",
@@ -12,7 +23,8 @@
     "dev": "npm run build && node dist/pkg/index.js",
     "format": "biome format --write .",
     "lint": "biome check .",
-    "lint:fix": "biome check --write ."
+    "lint:fix": "biome check --write .",
+    "test": "vitest run"
   },
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "^1.7.1",
@@ -31,6 +43,7 @@
     "cross-env": "^10.1.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.12",
-    "vite-plugin-singlefile": "^2.3.3"
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^4.1.6"
   }
 }

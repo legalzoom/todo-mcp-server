@@ -11,7 +11,9 @@ import './styles/app.css';
 
 // --- MCP App ---
 
-const app = new App({ name: 'Todo Admin', version: '1.0.0' });
+declare const __APP_VERSION__: string;
+
+const app = new App({ name: 'Todo Admin', version: __APP_VERSION__ });
 setApp(app);
 
 // --- Root Component ---

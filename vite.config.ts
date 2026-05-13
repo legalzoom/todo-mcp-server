@@ -1,7 +1,11 @@
 import path from 'node:path';
+import { createRequire } from 'node:module';
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import solid from 'vite-plugin-solid';
+
+const require = createRequire(import.meta.url);
+const pkg = require('./package.json');
 
 const INPUT = process.env.INPUT;
 if (!INPUT) {
@@ -23,5 +27,8 @@ export default defineConfig({
     },
     outDir: path.resolve('dist/apps'),
     emptyOutDir: false,
+  },
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
   },
 });

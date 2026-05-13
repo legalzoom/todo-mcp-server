@@ -57,3 +57,36 @@ To debug the server, you can use [modelcontextprotocol/inspector](https://github
 ### Environment Variables
 
 See [`.env.example`](./.env.example) for required and recommended environment variables.
+
+## Releasing
+
+Releases are triggered by pushing a semver tag:
+
+```sh
+npm version patch -m "v%s"    # or minor / major — bumps package.json, commits, tags
+git tag -fa "v$(node -p "require('./package.json').version")" HEAD -m "v$(node -p "require('./package.json').version")"
+git push --follow-tags
+```
+
+This kicks off the [release workflow](./.github/workflows/release.yaml), which:
+
+1. Lints and builds the project
+2. Builds a Docker image with OCI metadata and MCP registry labels
+3. Pushes the image to `ghcr.io/gitops-ci-cd/acme-mcp-server` with semver tags (`1.0.0`, `1.0`, `1`)
+4. Attaches a signed SLSA provenance attestation to the image
+
+### Distribution
+
+| Channel | Transport | Identifier |
+| --- | --- | --- |
+| npm | stdio | `@gitops-ci-cd/acme-mcp-server` |
+| GHCR | http | `ghcr.io/gitops-ci-cd/acme-mcp-server` |
+| Remote | streamable-http | See `server.json` |
+
+Registry metadata is defined in [`server.json`](./server.json). To publish to the [MCP Registry](https://registry.modelcontextprotocol.io):
+
+```sh
+brew install mcp-publisher
+mcp-publisher login github
+mcp-publisher publish
+```

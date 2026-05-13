@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const transport = process.argv[2] ?? 'http';
 
 if (transport === 'stdio') {
