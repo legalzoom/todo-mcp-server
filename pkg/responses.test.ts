@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { errorMessage, toolResponse, resourceResponse } from './responses.js';
+import { describe, expect, it } from 'vitest';
+import { errorMessage, resourceResponse, toolResponse } from './responses.js';
 
 describe('errorMessage', () => {
   it('extracts message from Error', () => {

@@ -1,6 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
-import { register } from './registry.js';
 import { ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { describe, expect, it, vi } from 'vitest';
+import { register } from './registry.js';
 
 const mockServer = () => ({
   registerResource: vi.fn(),

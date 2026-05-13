@@ -1,5 +1,5 @@
-import path from 'node:path';
 import { createRequire } from 'node:module';
+import path from 'node:path';
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import solid from 'vite-plugin-solid';
