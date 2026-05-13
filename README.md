@@ -6,7 +6,7 @@ A [Model Context Protocol (MCP) server](https://modelcontextprotocol.io/introduc
 
 ### MCP Bundle (one-click)
 
-Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci-cd/todo-mcp-server/releases/latest) and open it — Claude Desktop will handle the rest.
+Download the `.mcpb` file from the [latest release](https://github.com/legalzoom/todo-mcp-server/releases/latest) and open it — Claude Desktop will handle the rest.
 
 ### npm
 
@@ -16,7 +16,7 @@ Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci
     "servers": {
       "todo-mcp-server": {
         "command": "npx",
-        "args": ["-y", "--registry", "https://npm.pkg.github.com", "@gitops-ci-cd/todo-mcp-server", "stdio"]
+        "args": ["-y", "--registry", "https://npm.pkg.github.com", "@legalzoom/todo-mcp-server", "stdio"]
       }
     }
   }
@@ -39,7 +39,7 @@ Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci
 ```
 
 ```sh
-docker run -p 8080:8080 ghcr.io/gitops-ci-cd/todo-mcp-server
+docker run -p 8080:8080 ghcr.io/legalzoom/todo-mcp-server
 ```
 
 ### Remote
@@ -112,9 +112,9 @@ This kicks off the [release workflow](./.github/workflows/release.yaml).
 
 | Channel | Transport | Identifier |
 | --- | --- | --- |
-| npm | stdio | `@gitops-ci-cd/todo-mcp-server` |
-| GHCR | streamable-http | `ghcr.io/gitops-ci-cd/todo-mcp-server` |
-| MCPB | stdio | [Latest release](https://github.com/gitops-ci-cd/todo-mcp-server/releases/latest) |
+| npm | stdio | `@legalzoom/todo-mcp-server` |
+| GHCR | streamable-http | `ghcr.io/legalzoom/todo-mcp-server` |
+| MCPB | stdio | [Latest release](https://github.com/legalzoom/todo-mcp-server/releases/latest) |
 | Remote | streamable-http | See `server.json` |
 
 Registry metadata is defined in [`server.json`](./server.json). To publish to the [MCP Registry](https://registry.modelcontextprotocol.io):

@@ -1,10 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.gitops-ci-cd/todo-mcp-server",
+  "name": "io.github.legalzoom/todo-mcp-server",
   "title": "Todo MCP Server",
   "description": "A demo MCP server showcasing best practices and full MCP spec functionality via a todo domain",
   "repository": {
-    "url": "https://github.com/gitops-ci-cd/todo-mcp-server",
+    "url": "https://github.com/legalzoom/todo-mcp-server",
     "source": "github"
   },
   "version": "0.9.0",
@@ -17,7 +17,7 @@
   "packages": [
     {
       "registryType": "npm",
-      "identifier": "@gitops-ci-cd/todo-mcp-server",
+      "identifier": "@legalzoom/todo-mcp-server",
       "registryBaseUrl": "https://npm.pkg.github.com",
       "version": "0.9.0",
       "transport": {
@@ -26,7 +26,7 @@
     },
     {
       "registryType": "oci",
-      "identifier": "ghcr.io/gitops-ci-cd/todo-mcp-server:0.9.0",
+      "identifier": "ghcr.io/legalzoom/todo-mcp-server:0.9.0",
       "version": "0.9.0",
       "transport": {
         "type": "streamable-http",
@@ -35,7 +35,7 @@
     },
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/gitops-ci-cd/todo-mcp-server/releases/download/v0.9.0/todo-mcp-server.mcpb",
+      "identifier": "https://github.com/legalzoom/todo-mcp-server/releases/download/v0.9.0/todo-mcp-server.mcpb",
       "version": "0.9.0",
       "transport": {
         "type": "stdio"
