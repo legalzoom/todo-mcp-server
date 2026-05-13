@@ -1,4 +1,4 @@
-# Acme MCP Server
+# Todo MCP Server
 
 A [Model Context Protocol (MCP) server](https://modelcontextprotocol.io/introduction) showcasing MCP concepts via todos.
 
@@ -6,7 +6,7 @@ A [Model Context Protocol (MCP) server](https://modelcontextprotocol.io/introduc
 
 ### MCP Bundle (one-click)
 
-Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci-cd/acme-mcp-server/releases/latest) and open it — Claude Desktop will handle the rest.
+Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci-cd/todo-mcp-server/releases/latest) and open it — Claude Desktop will handle the rest.
 
 ### npm
 
@@ -14,9 +14,9 @@ Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci
 {
   "mcp": {
     "servers": {
-      "acme-mcp-server": {
+      "todo-mcp-server": {
         "command": "npx",
-        "args": ["-y", "--registry", "https://npm.pkg.github.com", "@gitops-ci-cd/acme-mcp-server", "stdio"]
+        "args": ["-y", "--registry", "https://npm.pkg.github.com", "@gitops-ci-cd/todo-mcp-server", "stdio"]
       }
     }
   }
@@ -29,7 +29,7 @@ Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci
 {
   "mcp": {
     "servers": {
-      "acme-mcp-server": {
+      "todo-mcp-server": {
         "url": "http://localhost:8080/mcp",
         "type": "http"
       }
@@ -39,7 +39,7 @@ Download the `.mcpb` file from the [latest release](https://github.com/gitops-ci
 ```
 
 ```sh
-docker run -p 8080:8080 ghcr.io/gitops-ci-cd/acme-mcp-server
+docker run -p 8080:8080 ghcr.io/gitops-ci-cd/todo-mcp-server
 ```
 
 ### Remote
@@ -48,7 +48,7 @@ docker run -p 8080:8080 ghcr.io/gitops-ci-cd/acme-mcp-server
 {
   "mcp": {
     "servers": {
-      "acme-mcp-server": {
+      "todo-mcp-server": {
         "url": "https://ai.acme.com/mcp",
         "type": "http"
       }
@@ -112,9 +112,9 @@ This kicks off the [release workflow](./.github/workflows/release.yaml).
 
 | Channel | Transport | Identifier |
 | --- | --- | --- |
-| npm | stdio | `@gitops-ci-cd/acme-mcp-server` |
-| GHCR | streamable-http | `ghcr.io/gitops-ci-cd/acme-mcp-server` |
-| MCPB | stdio | [Latest release](https://github.com/gitops-ci-cd/acme-mcp-server/releases/latest) |
+| npm | stdio | `@gitops-ci-cd/todo-mcp-server` |
+| GHCR | streamable-http | `ghcr.io/gitops-ci-cd/todo-mcp-server` |
+| MCPB | stdio | [Latest release](https://github.com/gitops-ci-cd/todo-mcp-server/releases/latest) |
 | Remote | streamable-http | See `server.json` |
 
 Registry metadata is defined in [`server.json`](./server.json). To publish to the [MCP Registry](https://registry.modelcontextprotocol.io):

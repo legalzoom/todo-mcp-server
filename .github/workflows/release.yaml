@@ -49,8 +49,8 @@ jobs:
             require('fs').writeFileSync('manifest.json', JSON.stringify(m, null, 2) + '\n');
           "
           npm prune --omit=dev
-          npx --yes @anthropic-ai/mcpb pack . acme-mcp-server.mcpb
-          npx --yes @anthropic-ai/mcpb sign acme-mcp-server.mcpb --self-signed
+          npx --yes @anthropic-ai/mcpb pack . ${{ github.event.repository.name }}.mcpb
+          npx --yes @anthropic-ai/mcpb sign ${{ github.event.repository.name }}.mcpb --self-signed
 
       - uses: docker/login-action@v4
         with:
@@ -68,7 +68,7 @@ jobs:
             type=semver,pattern={{major}}
             type=sha
           labels: |
-            org.opencontainers.image.title=Acme MCP Server
+            org.opencontainers.image.title=Todo MCP Server
             org.opencontainers.image.description=A demo MCP server showcasing best practices and full MCP spec functionality
             org.opencontainers.image.vendor=${{ github.repository_owner }}
             io.modelcontextprotocol.server.name=io.github.${{ github.repository_owner }}/${{ github.event.repository.name }}
@@ -90,4 +90,4 @@ jobs:
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "$GITHUB_REF_NAME" acme-mcp-server.mcpb --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" ${{ github.event.repository.name }}.mcpb --generate-notes
