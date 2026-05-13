@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.gitops-ci-cd/acme-mcp-server",
+  "title": "Acme MCP Server",
+  "description": "A demo MCP server showcasing best practices and full MCP spec functionality via a todo domain",
+  "repository": {
+    "url": "https://github.com/gitops-ci-cd/acme-mcp-server",
+    "source": "github"
+  },
+  "version": "0.9.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://ai.acme.com/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@gitops-ci-cd/acme-mcp-server",
+      "version": "0.9.0",
+      "transport": {
+        "type": "stdio"
+      }
+    },
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/gitops-ci-cd/acme-mcp-server:0.9.0",
+      "version": "0.9.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
