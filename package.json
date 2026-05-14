@@ -1,6 +1,6 @@
 {
   "name": "@legalzoom/todo-mcp-server",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "mcpName": "io.github.legalzoom/todo-mcp-server",
   "description": "MCP server demo showcasing best practices and full MCP functionality",
   "repository": {

@@ -7,7 +7,7 @@
     "url": "https://github.com/legalzoom/todo-mcp-server",
     "source": "github"
   },
-  "version": "0.9.1",
+  "version": "0.9.2",
   "remotes": [
     {
       "type": "streamable-http",
@@ -19,15 +19,15 @@
       "registryType": "npm",
       "identifier": "@legalzoom/todo-mcp-server",
       "registryBaseUrl": "https://npm.pkg.github.com",
-      "version": "0.9.1",
+      "version": "0.9.2",
       "transport": {
         "type": "stdio"
       }
     },
     {
       "registryType": "oci",
-      "identifier": "ghcr.io/legalzoom/todo-mcp-server:0.9.1",
-      "version": "0.9.1",
+      "identifier": "ghcr.io/legalzoom/todo-mcp-server:0.9.2",
+      "version": "0.9.2",
       "transport": {
         "type": "streamable-http",
         "url": "http://localhost:8080/mcp"
@@ -35,8 +35,8 @@
     },
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/legalzoom/todo-mcp-server/releases/download/v0.9.1/todo-mcp-server.mcpb",
-      "version": "0.9.1",
+      "identifier": "https://github.com/legalzoom/todo-mcp-server/releases/download/v0.9.2/todo-mcp-server.mcpb",
+      "version": "0.9.2",
       "transport": {
         "type": "stdio"
       }
